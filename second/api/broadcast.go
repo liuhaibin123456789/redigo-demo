@@ -33,7 +33,7 @@ func CreateBroadcast(c *gin.Context) {
 }
 
 // GetBroadcast
-// @summary  客户订阅的10s内要发布订阅
+// @summary  客户订阅的10s内要发布订阅的帖子
 // @produce  json
 // @success  200       {object}  model.Post  "成功"
 // @failure  200       {object}  string  "请求错误"
