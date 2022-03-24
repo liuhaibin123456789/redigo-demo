@@ -1,0 +1,65 @@
+definitions:
+  model.Post:
+    properties:
+      content:
+        type: string
+      number:
+        type: integer
+      time:
+        type: string
+      title:
+        type: string
+      user_name:
+        type: string
+    type: object
+host: localhost:8081
+info:
+  contact: {}
+  description: 基于redigo库的发布与订阅
+  title: 发布与订阅
+  version: "1.0"
+paths:
+  /broadcast:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 请求错误
+          schema:
+            type: string
+      summary: 服务端来发布帖子至频道
+    post:
+      consumes:
+      - multipart/form-data
+      parameters:
+      - description: 用户名
+        in: formData
+        name: user_name
+        required: true
+        type: string
+      - description: 帖子标题
+        in: formData
+        name: title
+        required: true
+        type: string
+      - description: 帖子内容
+        in: formData
+        name: content
+        required: true
+        type: string
+      - description: 帖子关注数量
+        in: formData
+        name: number
+        required: true
+        type: string
+      - description: 帖子发布时间
+        in: formData
+        name: time
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: 服务端来发布帖子至频道
+swagger: "2.0"
